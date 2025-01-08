@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">wenshu</string>
+    <string name="title_activity_main">wenshu</string>
+    <string name="package_name">ionic.wenshu</string>
+    <string name="custom_url_scheme">ionic.wenshu</string>
+</resources>
