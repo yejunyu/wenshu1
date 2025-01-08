@@ -14,6 +14,9 @@ importers:
       '@capacitor/app':
         specifier: 6.0.2
         version: 6.0.2(@capacitor/core@6.2.0)
+      '@capacitor/camera':
+        specifier: ^6.1.2
+        version: 6.1.2(@capacitor/core@6.2.0)
       '@capacitor/core':
         specifier: 6.2.0
         version: 6.2.0
@@ -29,6 +32,9 @@ importers:
       '@capacitor/status-bar':
         specifier: 6.0.2
         version: 6.0.2(@capacitor/core@6.2.0)
+      '@ionic/pwa-elements':
+        specifier: ^3.3.0
+        version: 3.3.0
       '@ionic/react':
         specifier: ^8.0.0
         version: 8.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -41,6 +47,9 @@ importers:
       '@types/react-router-dom':
         specifier: ^5.3.3
         version: 5.3.3
+      assets:
+        specifier: 3.0.1
+        version: 3.0.1
       ionicons:
         specifier: ^7.0.0
         version: 7.4.0
@@ -628,6 +637,11 @@ packages:
     peerDependencies:
       '@capacitor/core': ^6.0.0
 
+  '@capacitor/camera@6.1.2':
+    resolution: {integrity: sha512-UH5srvOHDzIM1o4yFkRZCsP7WfQQOvyn+aS7ycqHFbgofr/xBTqPQUdwN+COtwaZYCwnDunPFYIGQAwSdzq6jg==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
+
   '@capacitor/cli@6.2.0':
     resolution: {integrity: sha512-EWcXG39mZh35zrHhOqzN1ILeSyMRyEqWVtQDXqMGjCXYRH6b6p5TvyvLDN8ZNy26tbhI3i79gfrgirt+mNwuuw==}
     engines: {node: '>=18.0.0'}
@@ -842,6 +856,10 @@ packages:
 
   '@ionic/core@8.4.1':
     resolution: {integrity: sha512-D5xpw5TF2wldpAWE0rHq3L+5T79EjR6d++QFpprjp+q+cFjjhOnfGD+2k7gLlWepAod9LUUigeL0JF02C2wgRQ==}
+
+  '@ionic/pwa-elements@3.3.0':
+    resolution: {integrity: sha512-vbykpxd2nGRlA67AnqDwsiVf8PUmInLyi6lQdnPDjeiML1WZa0CPe6r632nGDV9PTi+sWNde9Xexg9SD6Pwyqw==}
+    engines: {node: '>=16.0.0', npm: '>=8.0.0'}
 
   '@ionic/react-router@8.4.1':
     resolution: {integrity: sha512-OFfN07lBc/kNjyWqVNMraA/ZlqguveybCtXYuVuqHf0QshrakT+JYhuJQof5sEbqRq4GFbgqOeCJqL+3jozDZA==}
@@ -1309,9 +1327,16 @@ packages:
   assertion-error@1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
 
+  assets@3.0.1:
+    resolution: {integrity: sha512-fTyLNf/9V24y5zO83f4DAEuvaKj7MWBixbnqdZneAhsv1r21yQ/6ogZfvXHmphJAHsz4DhuOwHeJKVbGqqvk0Q==}
+    engines: {node: '>=4'}
+
   astral-regex@2.0.0:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
     engines: {node: '>=8'}
+
+  async@2.6.4:
+    resolution: {integrity: sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==}
 
   async@3.2.6:
     resolution: {integrity: sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==}
@@ -1409,6 +1434,30 @@ packages:
   cachedir@2.4.0:
     resolution: {integrity: sha512-9EtFOZR8g22CL7BWjJ9BUx1+A/djkofnyW3aOXZORNW2kxoUpx2h+uN2cOqwPmFhnpVmxg+KW2OjOSgChTEvsQ==}
     engines: {node: '>=6'}
+
+  calipers-gif@2.0.0:
+    resolution: {integrity: sha512-ZePtjAmTmugWWHDjZhrh7SZ8/8hG2sS5Dz6xyZ3bWkofLqq31c01GR0AvBg5Cn5/x4BjT9PhIi0VMjHBEO+kog==}
+    peerDependencies:
+      calipers: 2.x.x
+
+  calipers-jpeg@2.0.0:
+    resolution: {integrity: sha512-MAAXKh3+I0NEDGNAxBbc+sh670ZWdef/Gv0G8DvH/xLp5sxqEPBR1uQRHfk2es0vJzas4saL0RPgmoL+o+cszw==}
+    peerDependencies:
+      calipers: 2.x.x
+
+  calipers-png@2.0.0:
+    resolution: {integrity: sha512-yj2N0HSrKuePXYFX2T2710haASVF5wQ184g2THlAfbxxcc/ySRu9gUK20PIGfCfaSKt2cMMTE9jD6KZpfoehQg==}
+    peerDependencies:
+      calipers: 2.x.x
+
+  calipers-svg@2.0.1:
+    resolution: {integrity: sha512-3PROqHARmj8wWudUC7DzXm1+mSocqgY7jNuehFNHgrUVrKf8o7MqDjS92vJz5LvZsAofJsoAFMajkqwbxBROSQ==}
+
+  calipers-webp@2.0.0:
+    resolution: {integrity: sha512-np7ZtCwUjpxz+DF/RYNYFxxaltJxlF7rIVKWnU/cKcgQ7r06/Fquw1Q/oMZiJe6hfjI911lhDY6ZC+X0MtA5rg==}
+
+  calipers@2.0.1:
+    resolution: {integrity: sha512-AP4Ui2Z8fZf69d8Dx4cfJgPjQHY3m+QXGFCaAGu8pfNQjyajkosS+Kkf1n6pQDMZcelN5h3MdcjweUqxcsS4pg==}
 
   call-bind-apply-helpers@1.0.1:
     resolution: {integrity: sha512-BhYE+WDaywFg2TBWYNXAE+8B1ATnThNBqXHP5nQu0jWJdVvY2hvkpyB3qOmtmDePiS5/BDQ8wASEWGMWRG148g==}
@@ -2361,6 +2410,11 @@ packages:
   mime-types@2.1.35:
     resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
     engines: {node: '>= 0.6'}
+
+  mime@2.6.0:
+    resolution: {integrity: sha512-USPkMeET31rOMiarsBNIHZKLGgvKc/LrjofAnBlOttf5ajRvqiRA8QsenbcooctK6d6Ts6aqZXBA+XbkKthiQg==}
+    engines: {node: '>=4.0.0'}
+    hasBin: true
 
   mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
@@ -3966,6 +4020,10 @@ snapshots:
     dependencies:
       '@capacitor/core': 6.2.0
 
+  '@capacitor/camera@6.1.2(@capacitor/core@6.2.0)':
+    dependencies:
+      '@capacitor/core': 6.2.0
+
   '@capacitor/cli@6.2.0':
     dependencies:
       '@ionic/cli-framework-output': 2.2.8
@@ -4156,6 +4214,8 @@ snapshots:
       '@stencil/core': 4.20.0
       ionicons: 7.4.0
       tslib: 2.8.1
+
+  '@ionic/pwa-elements@3.3.0': {}
 
   '@ionic/react-router@8.4.1(react-dom@18.3.1(react@18.3.1))(react-router-dom@5.3.4(react@18.3.1))(react-router@5.3.4(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -4709,7 +4769,25 @@ snapshots:
 
   assertion-error@1.1.0: {}
 
+  assets@3.0.1:
+    dependencies:
+      async: 2.6.4
+      bluebird: 3.7.2
+      calipers: 2.0.1
+      calipers-gif: 2.0.0(calipers@2.0.1)
+      calipers-jpeg: 2.0.0(calipers@2.0.1)
+      calipers-png: 2.0.0(calipers@2.0.1)
+      calipers-svg: 2.0.1
+      calipers-webp: 2.0.0
+      glob: 7.2.3
+      lodash: 4.17.21
+      mime: 2.6.0
+
   astral-regex@2.0.0: {}
+
+  async@2.6.4:
+    dependencies:
+      lodash: 4.17.21
 
   async@3.2.6: {}
 
@@ -4804,6 +4882,33 @@ snapshots:
   cac@6.7.14: {}
 
   cachedir@2.4.0: {}
+
+  calipers-gif@2.0.0(calipers@2.0.1):
+    dependencies:
+      bluebird: 3.7.2
+      calipers: 2.0.1
+
+  calipers-jpeg@2.0.0(calipers@2.0.1):
+    dependencies:
+      bluebird: 3.7.2
+      calipers: 2.0.1
+
+  calipers-png@2.0.0(calipers@2.0.1):
+    dependencies:
+      bluebird: 3.7.2
+      calipers: 2.0.1
+
+  calipers-svg@2.0.1:
+    dependencies:
+      bluebird: 3.7.2
+
+  calipers-webp@2.0.0:
+    dependencies:
+      bluebird: 3.7.2
+
+  calipers@2.0.1:
+    dependencies:
+      bluebird: 3.7.2
 
   call-bind-apply-helpers@1.0.1:
     dependencies:
@@ -5993,6 +6098,8 @@ snapshots:
   mime-types@2.1.35:
     dependencies:
       mime-db: 1.52.0
+
+  mime@2.6.0: {}
 
   mimic-fn@2.1.0: {}
 

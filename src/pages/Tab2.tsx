@@ -25,15 +25,30 @@ const Tab2: React.FC = () => {
       el: elementRef.current,
       threshold: 0,
       gestureName: "my-gesture",
+      onStart: (ev) => onStartHandler(ev),
       onMove: (ev) => onMoveHandler(ev),
+      onEnd: (ev) => onEndHandler(ev),
     });
     gesture.enable();
   });
+  const onStartHandler = (detail: GestureDetail) => {
+    elementRef.current!.style.transition = "0ms";
+  };
+  const lastPosition = useRef({ x: 0, y: 0 });
+
   const onMoveHandler = (detail: GestureDetail) => {
-    console.log(detail);
-    const x = detail.currentX - detail.startX;
-    const y = detail.currentY - detail.startY;
+    // 基于上次位置计算新位置
+    const x = lastPosition.current.x + (detail.currentX - detail.startX);
+    const y = lastPosition.current.y + (detail.currentY - detail.startY);
     elementRef.current!.style.transform = `translate(${x}px,${y}px)`;
+  };
+
+  const onEndHandler = (detail: GestureDetail) => {
+    elementRef.current!.style.transition = "500ms ease-in";
+    // 更新最后位置
+    lastPosition.current.x += detail.currentX - detail.startX;
+    lastPosition.current.y += detail.currentY - detail.startY;
+    elementRef.current!.style.transform = `translate(${lastPosition.current.x}px,${lastPosition.current.y}px)`;
   };
   return (
     <IonPage>
@@ -42,7 +57,7 @@ const Tab2: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Page Title2</IonTitle>
+          <IonTitle>Page Title</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
